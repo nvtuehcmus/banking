@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>
+    Tbank
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- CSS Files -->
+  <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+<body class="dark-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <div class="logo"><a href="/home" class="simple-text logo-normal">
+          Tbank
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">
+              <i class="material-icons">home</i>
+              <p>Trang chủ</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/send">
+              <i class="material-icons">attach_money</i>
+              <p>Chuyển tiền</p>
+            </a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/sendTk">
+              <i class="material-icons">monetization_on</i>
+              <p>Gửi tiền tiết kiệm</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/spend">
+              <i class="material-icons">credit_card</i>
+              <p>Tài khoản thanh toán</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/saving">
+              <i class="material-icons">account_balance_wallet</i>
+              <p>Tài khoản tiết kiệm</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/balance">
+              <i class="material-icons">atm</i>
+              <p>Nạp tiền/rút tiền</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">
+              <i class="material-icons">account_circle</i>
+              <p>Thông tin chủ thẻ</p>
+            </a>
+          </li>
+   
+
+          <li class="nav-item">
+            <a class="nav-link" href="/inform">
+              <i class="material-icons">notification_important</i>
+              <p>Thông báo</p>
+            </a>
+          </li>
+
+       
+
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">
+              <i class="material-icons">login</i>
+              <p>Đăng xuất</p>
+            </a>
+          </li>
+     
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" data-target="#navigation-example">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-default btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col offset-2 col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Gửi tiền tiết kiệm</h4>
+                  <p class="card-category">Lưu ý: đến ngân hàng gần nhất thanh toán trong 24h, sau 24h giao dịch sẽ bị hủy</p>
+                </div>
+                <div class="card-body">
+                  <form method="POST" action="/sendTk">
+                  
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Số tiền gửi</label>
+                          <input type="text" onchange="solve()" name="balance" id="balance" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Hạn mức</label>
+                          <select id="choise" onchange="solve()">
+                            <option>1 tháng</option>
+                            <option>3 tháng</option>
+                            <option>6 tháng</option>
+                            <option>9 tháng</option>
+                            <option>12 tháng</option>
+                            <option>24 tháng</option>
+                            <option>36 tháng</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="hidden" name="period" id="period" value="0">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Lãi suất %</label>
+                          <label id="rate"  id="option"  class="form-control"></label>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Số tiền sẽ nhận được</label>
+                          <label  id="lastBalance" class="form-control"></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Hoàn thành</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        <script>
+          function solve(){
+            var period = document.getElementById("choise").value.split(' ')[0];
+            var balance = document.getElementById('balance').value;
+            if(period.lenght!=0 && balance>0){
+                if(period == "1"){document.getElementById("rate").innerHTML = 0.5}
+               else if(period == "3"){ document.getElementById("rate").innerHTML = 1}
+               else if(period == "6"){document.getElementById("rate").innerHTML = 2}
+               else if(period == "9"){document.getElementById("rate").innerHTML = 3}
+               else if(period == "12"){document.getElementById("rate").innerHTML = 5}
+               else if(period == "24"){document.getElementById("rate").innerHTML = 7}
+               else if(period == "36"){document.getElementById("rate").innerHTML = 8}
+
+               document.getElementById("lastBalance").innerHTML = balance * Math.pow((1+(document.getElementById("rate").innerHTML)/100),period)
+               document.getElementById('period').value = period
+            }
+          
+          }
+          //       let balance = info.balance* Math.pow((1+rate/100),info.period)
+        </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<%- include('footer'); -%> 

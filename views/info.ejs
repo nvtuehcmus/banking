@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>
+    Tbank
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- CSS Files -->
+  <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="assets/demo/demo.css" rel="stylesheet" />
+</head>
+<body class="dark-edition">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
+      <div class="logo"><a href="/home" class="simple-text logo-normal">
+          Tbank
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link " href="/home">
+              <i class="material-icons">home</i>
+              <p>Trang chủ</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/send">
+              <i class="material-icons">attach_money</i>
+              <p>Chuyển tiền</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/sendTk">
+              <i class="material-icons">monetization_on</i>
+              <p>Gửi tiền tiết kiệm</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/spend">
+              <i class="material-icons">credit_card</i>
+              <p>Tài khoản thanh toán</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/saving">
+              <i class="material-icons">account_balance_wallet</i>
+              <p>Tài khoản tiết kiệm</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/balance">
+              <i class="material-icons">atm</i>
+              <p>Nạp tiền/rút tiền</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">
+              <i class="material-icons">account_circle</i>
+              <p>Thông tin chủ thẻ</p>
+            </a>
+          </li>
+   
+
+          <li class="nav-item">
+            <a class="nav-link" href="/inform">
+              <i class="material-icons">notification_important</i>
+              <p>Thông báo</p>
+            </a>
+          </li>
+
+       
+
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">
+              <i class="material-icons">login</i>
+              <p>Đăng xuất</p>
+            </a>
+          </li>
+     
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+  
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title" style="text-align:center;">Thông báo</h4>
+             
+            </div>
+            <div class="card-body">
+              <div class="row">
+                
+                <div class="col offset-3 col-md-6">
+              
+                <% if(type == "s"){ %> 
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    
+                    <span>
+                      <b> Success - </b><%- status %></span>
+                  </div>
+                <% }else{ %> 
+                  <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                      <b> Info - </b><%- status %></span>
+                  </div>
+                <% } %> 
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="places-buttons">
+             
+                <div class="row">
+                  <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                    <div class="row">
+                    
+                      <div class="col offset-4 col-md-4">
+                        <a href="/"><button class="btn btn-primary btn-block">Về trang chủ</button></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="https://unpkg.com/default-passive-events"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Chartist JS -->
+    <script src="assets/js/plugins/chartist.min.js"></script>
+    
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="assets/js/material-dashboard.js?v=2.1.0"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="assets/demo/demo.js"></script>
+    <script src="assets/number.js"></script>
+    </body>
+    
+    </html> 
